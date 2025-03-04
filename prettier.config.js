@@ -7,6 +7,7 @@ const config = {
   ],
   overrides: [{ files: "*.svelte", options: { parser: "svelte" } }],
 
+  tailwindStylesheet: "./apps/web/src/app.css",
   tailwindFunctions: ["clsx", "twMerge", "cn"],
 
   importOrder: [
