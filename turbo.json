@@ -1,0 +1,26 @@
+{
+  "$schema": "./node_modules/turbo/schema.json",
+  "ui": "tui",
+  "tasks": {
+    "dev": {
+      "cache": false,
+      "persistent": true,
+      "dependsOn": ["^build"]
+    },
+    "build": {
+      "outputs": ["dist/**", ".cloudflare/**"],
+      "dependsOn": ["^build"]
+    },
+    "deploy": {
+      "outputs": ["dist/**", ".cloudflare/**"],
+      "dependsOn": ["^build"]
+    },
+
+    "lint": {
+      "dependsOn": ["^build"]
+    },
+    "lint:fix": {
+      "dependsOn": ["^build"]
+    }
+  }
+}

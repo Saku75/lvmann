@@ -1,0 +1,22 @@
+{
+  "name": "lvmann",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "turbo dev",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "lint:fix": "turbo lint:fix",
+    "format": "prettier --write .",
+    "deploy:dev": "turbo deploy -- -e dev",
+    "deploy:prod": "turbo deploy -- -e prod"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "prettier": "^3.5.0",
+    "prettier-plugin-svelte": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "turbo": "^2.4.1"
+  },
+  "packageManager": "pnpm@10.5.2"
+}

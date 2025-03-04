@@ -1,0 +1,59 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+
+  "name": "lvmann-web",
+  "compatibility_date": "2025-03-04",
+
+  "workers_dev": false,
+  "preview_urls": false,
+
+  "main": ".cloudflare/worker.js",
+  "site": {
+    "bucket": ".cloudflare/public"
+  },
+
+  "observability": {
+    "enabled": true
+  },
+
+  "env": {
+    "dev": {
+      "routes": [
+        {
+          "zone_id": "83d66c57df708ad9f6bcff869f3756f5",
+          "pattern": "dev.lvmann.dk",
+          "custom_domain": true
+        },
+        {
+          "zone_id": "fc510811324c7bee6c6c6eed185df693",
+          "pattern": "dev.lvmann.io",
+          "custom_domain": true
+        }
+      ]
+    },
+    "prod": {
+      "routes": [
+        {
+          "zone_id": "83d66c57df708ad9f6bcff869f3756f5",
+          "pattern": "lvmann.dk",
+          "custom_domain": true
+        },
+        {
+          "zone_id": "83d66c57df708ad9f6bcff869f3756f5",
+          "pattern": "www.lvmann.dk",
+          "custom_domain": true
+        },
+        {
+          "zone_id": "fc510811324c7bee6c6c6eed185df693",
+          "pattern": "lvmann.io",
+          "custom_domain": true
+        },
+        {
+          "zone_id": "fc510811324c7bee6c6c6eed185df693",
+          "pattern": "www.lvmann.io",
+          "custom_domain": true
+        }
+      ]
+    }
+  }
+}
