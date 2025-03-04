@@ -7,9 +7,7 @@
     "build": "turbo build",
     "lint": "turbo lint",
     "lint:fix": "turbo lint:fix",
-    "format": "prettier --write .",
-    "deploy:dev": "turbo deploy -- -e dev",
-    "deploy:prod": "turbo deploy -- -e prod"
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@trivago/prettier-plugin-sort-imports": "^5.2.2",
