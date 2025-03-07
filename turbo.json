@@ -11,6 +11,10 @@
       "outputs": ["dist/**", ".cloudflare/**"],
       "dependsOn": ["^build"]
     },
+    "preview": {
+      "outputs": ["dist/**", ".cloudflare/**"],
+      "dependsOn": ["^build"]
+    },
     "deploy": {
       "outputs": ["dist/**", ".cloudflare/**"],
       "dependsOn": ["^build"],
