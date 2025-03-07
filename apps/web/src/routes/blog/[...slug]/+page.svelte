@@ -1,14 +1,13 @@
 <script lang="ts">
+  import { metadataStore } from "$lib/stores/metadata.svelte";
+
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
-</script>
 
-<svelte:head>
-  <title>{data.metadata.title}</title>
-  <meta property="og:type" content="article" />
-  <meta property="og:title" content={data.metadata.title} />
-</svelte:head>
+  metadataStore.title = [data.metadata.title, "Blog"];
+  metadataStore.description = data.metadata.description;
+</script>
 
 <article>
   <hgroup>
