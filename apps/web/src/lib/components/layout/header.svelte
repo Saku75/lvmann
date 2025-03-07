@@ -3,7 +3,6 @@
   import X from "lucide-svelte/icons/x";
 
   import { LayoutSize } from "$lib/enums/layout.size";
-  import Logo from "$lib/images/logo.svg";
   import { layoutStore } from "$lib/stores/layout.svelte";
   import cn from "$lib/utils/cn";
 
@@ -22,7 +21,11 @@
         class="flex h-full items-center gap-2 px-4 text-2xl font-medium"
         href="/"
       >
-        <img src={Logo} alt="LVMann logo" class="h-7 w-7" />
+        <enhanced:img
+          src="$lib/images/logo.svg"
+          alt="LVMann logo"
+          class="h-7 w-7"
+        />
         LVMann
       </a>
 
