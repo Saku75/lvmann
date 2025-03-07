@@ -1,11 +1,7 @@
 <script lang="ts">
-  import { metadataStore } from "$lib/stores/metadata.svelte";
-
   import type { PageProps } from "./$types";
 
   const { data }: PageProps = $props();
-
-  metadataStore.title = ["Blog"];
 </script>
 
 <ul>

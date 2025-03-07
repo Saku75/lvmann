@@ -5,5 +5,12 @@ import type { PageServerLoad } from "./$types";
 export const load: PageServerLoad = async () => {
   const posts = getPosts();
 
-  return { posts };
+  return {
+    posts,
+    metadata: {
+      title: ["Blog"],
+      description: "Lukas Vendel Mann's blog",
+      author: "Lukas Vendel Mann",
+    },
+  };
 };

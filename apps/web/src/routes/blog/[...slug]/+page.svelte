@@ -1,27 +1,24 @@
 <script lang="ts">
-  import { metadataStore } from "$lib/stores/metadata.svelte";
-
   import type { PageProps } from "./$types";
 
   let { data }: PageProps = $props();
 
-  metadataStore.title = [data.metadata.title, "Blog"];
-  metadataStore.description = data.metadata.description;
+  const { metadata, Content } = data.post;
 </script>
 
 <article>
   <hgroup>
-    <h1>{data.metadata.title}</h1>
-    <p>Published at {data.metadata.date}</p>
+    <h1>{metadata.title}</h1>
+    <p>Published at {metadata.date}</p>
   </hgroup>
 
   <div>
-    {#each data.metadata.categories as category}
+    {#each metadata.categories as category}
       <span>&num;{category}</span>
     {/each}
   </div>
 
   <div>
-    <data.content />
+    <Content />
   </div>
 </article>

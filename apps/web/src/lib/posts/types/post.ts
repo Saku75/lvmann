@@ -4,15 +4,19 @@ type PostContent = typeof SvelteComponent;
 
 type PostMetadata = {
   title: string;
-  slug: string;
   description: string;
+  author: string;
+
   date: string;
-  categories: string[];
   published: boolean;
+
+  categories: string[];
+
+  slug: string;
 };
 
 type Post = {
-  content: PostContent;
+  Content: PostContent;
   metadata: PostMetadata;
 };
 

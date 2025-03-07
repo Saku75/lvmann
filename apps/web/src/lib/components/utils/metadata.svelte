@@ -1,22 +1,26 @@
 <script lang="ts">
-  import { metadataStore } from "$lib/stores/metadata.svelte";
+  import type { Metadata } from "$lib/types/metadata";
+
+  interface Props {
+    data?: Metadata;
+  }
+
+  const { data }: Props = $props();
 
   let title = $derived.by(() =>
-    metadataStore.title
-      ? `${metadataStore.title.join(" | ")} | LVMann`
-      : "LVMann",
+    data?.title ? `${data.title.join(" | ")} | LVMann` : "LVMann",
   );
 </script>
 
 <svelte:head>
   <title>{title}</title>
-  {#if metadataStore.description}
-    <meta name="description" content={metadataStore.description} />
+  {#if data?.description}
+    <meta name="description" content={data.description} />
   {/if}
-  {#if metadataStore.keywords}
-    <meta name="keywords" content={metadataStore.keywords.join(", ")} />
+  {#if data?.keywords}
+    <meta name="keywords" content={data.keywords.join(", ")} />
   {/if}
-  {#if metadataStore.author}
-    <meta name="author" content={metadataStore.author} />
+  {#if data?.author}
+    <meta name="author" content={data.author} />
   {/if}
 </svelte:head>
