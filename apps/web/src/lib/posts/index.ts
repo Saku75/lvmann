@@ -1,3 +1,5 @@
+import { dev } from "$app/environment";
+
 import type { Post, PostMetadata, PostRaw } from "$lib/posts/types/post";
 
 function getPosts() {
@@ -20,7 +22,7 @@ function getPosts() {
     if (file && slug) {
       const metadata = file.metadata as Omit<PostMetadata, "slug">;
       const post = { ...metadata, slug } satisfies PostMetadata;
-      post.published && posts.push(post);
+      (post.published || dev) && posts.push(post);
     }
   }
 
@@ -39,7 +41,7 @@ async function getPost(slug: string) {
 
   return {
     metadata: postRaw.metadata as PostMetadata,
-    content: postRaw.default,
+    Content: postRaw.default,
   } satisfies Post;
 }
 
