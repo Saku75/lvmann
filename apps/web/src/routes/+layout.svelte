@@ -1,4 +1,5 @@
 <script lang="ts">
+  import "@fontsource-variable/exo-2";
   import "@fontsource-variable/inter";
 
   import { page } from "$app/state";

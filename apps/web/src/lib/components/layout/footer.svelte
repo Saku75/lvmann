@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { Copyright } from "lucide-svelte";
+  import { Copyright } from "@lucide/svelte";
 
   import CenterContent from "../utils/center-content.svelte";
 </script>

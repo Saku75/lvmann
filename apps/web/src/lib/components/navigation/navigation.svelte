@@ -27,15 +27,16 @@
         <li class="contents">
           <a
             {href}
-            class={cn(linkColors, "px-4", {
-              "justify-center gap-1.5 py-1 text-xl": type === "list",
+            class={cn(linkColors, "px-4 font-heading", {
+              "justify-center gap-1 py-1 text-xl": type === "list",
+              "gap-0.5 text-lg": type === "bar",
             })}
           >
             {#if Icon}
               <Icon
                 class={cn({
-                  "h-6 w-6": type === "list",
-                  "h-5 w-5": type === "bar",
+                  "h-5.5 w-5.5": type === "list",
+                  "h-4.5 w-4.5": type === "bar",
                 })}
               />
             {/if}

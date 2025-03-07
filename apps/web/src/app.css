@@ -2,6 +2,7 @@
 
 @theme {
   --font-sans: "Inter Variable", sans-serif;
+  --font-heading: "Exo 2 Variable", sans-serif;
 
   --grid-template-rows-layout: auto 1fr auto;
   --grid-template-columns-layout: auto 1fr auto;
@@ -18,5 +19,14 @@
         @apply col-start-1;
       }
     }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading;
   }
 }
