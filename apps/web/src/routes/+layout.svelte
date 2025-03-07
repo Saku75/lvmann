@@ -1,15 +1,29 @@
 <script lang="ts">
   import "@fontsource-variable/inter";
 
+  import Footer from "$lib/components/layout/footer.svelte";
+  import Header from "$lib/components/layout/header.svelte";
+  import Menu from "$lib/components/layout/menu.svelte";
+  import Navigation from "$lib/components/navigation/navigation.svelte";
+  import { layoutStore } from "$lib/stores/layout.svelte";
+
   import "../app.css";
   import type { LayoutProps } from "./$types";
 
   let { children }: LayoutProps = $props();
 </script>
 
-<nav>
-  <a href="/">Home</a>
-  <a href="/blog">Blog</a>
-</nav>
+<svelte:window
+  bind:innerHeight={layoutStore.size.height}
+  bind:innerWidth={layoutStore.size.width}
+/>
+
+<Header />
+
+<Menu>
+  <Navigation />
+</Menu>
 
 {@render children()}
+
+<Footer />

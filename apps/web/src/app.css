@@ -3,14 +3,6 @@
 @theme {
   --font-sans: "Inter Variable", sans-serif;
 
-  --height-screen: 100svh;
-  --min-height-screen: 100svh;
-  --max-height-screen: 100svh;
-
-  --width-screen: 100svw;
-  --min-width-screen: 100svw;
-  --max-width-screen: 100svw;
-
   --grid-template-rows-layout: auto 1fr auto;
   --grid-template-columns-layout: auto 1fr auto;
 }
