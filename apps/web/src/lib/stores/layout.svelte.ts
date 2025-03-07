@@ -3,8 +3,8 @@ type LayoutStore = {
     open: boolean;
   };
   size: {
-    height: number | undefined;
-    width: number | undefined;
+    height?: number;
+    width?: number;
   };
 };
 
