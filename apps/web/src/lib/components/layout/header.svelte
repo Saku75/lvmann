@@ -1,6 +1,6 @@
 <script lang="ts">
-  import Menu from "lucide-svelte/icons/menu";
-  import X from "lucide-svelte/icons/x";
+  import Menu from "@lucide/svelte/icons/menu";
+  import X from "@lucide/svelte/icons/x";
 
   import { LayoutSize } from "$lib/enums/layout.size";
   import { layoutStore } from "$lib/stores/layout.svelte";
@@ -18,7 +18,7 @@
   >
     <CenterContent class="grid h-12 grid-cols-layout">
       <a
-        class="flex h-full items-center gap-2 px-4 text-2xl font-medium"
+        class="flex h-full items-center gap-2 px-4 font-heading text-2xl font-medium"
         href="/"
       >
         <enhanced:img
