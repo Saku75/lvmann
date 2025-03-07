@@ -32,7 +32,7 @@
   >
     <div transition:slide={{ duration: 500 }}>
       <CenterContent class="max-h-[calc(100vh-3rem)]">
-        <div class="py-4">
+        <div class="py-2">
           {@render children()}
         </div>
       </CenterContent>
