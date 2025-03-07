@@ -1,6 +1,8 @@
 <script lang="ts">
   import "@fontsource-variable/inter";
 
+  import { page } from "$app/state";
+
   import Footer from "$lib/components/layout/footer.svelte";
   import Header from "$lib/components/layout/header.svelte";
   import Menu from "$lib/components/layout/menu.svelte";
@@ -19,7 +21,7 @@
   bind:innerWidth={layoutStore.size.width}
 />
 
-<Metadata />
+<Metadata data={page.data.metadata} />
 
 <Header />
 

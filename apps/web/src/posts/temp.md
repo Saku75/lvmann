@@ -1,11 +1,14 @@
 ---
-title: First post
-description: First post.
+title: "First post"
+description: "First post."
+author: "Lukas Vendel Mann"
+
 date: "2023-4-14"
-categories:
-  - sveltekit
-  - svelte
 published: false
+
+categories:
+  - "sveltekit"
+  - "svelte"
 ---
 
 ## Markdown
