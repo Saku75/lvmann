@@ -1,3 +1,4 @@
+@import "./fonts.css";
 @import "tailwindcss";
 
 @theme {
@@ -13,7 +14,7 @@
     @apply bg-stone-100 text-stone-950 dark:bg-stone-900 dark:text-stone-50;
 
     > div#app {
-      @apply grid min-h-screen grid-rows-layout;
+      @apply grid min-h-svh grid-rows-layout;
 
       > * {
         @apply col-start-1;

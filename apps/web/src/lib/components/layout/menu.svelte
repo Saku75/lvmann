@@ -28,7 +28,7 @@
 
 {#if layoutStore.menu.open}
   <div
-    class="fixed top-12 w-screen border-b border-stone-400 bg-stone-100/50 backdrop-blur dark:border-stone-600 dark:bg-stone-900/50"
+    class="fixed top-[calc(3rem+2px)] z-40 w-screen border-b border-stone-400 bg-stone-100/50 backdrop-blur dark:border-stone-600 dark:bg-stone-900/50"
   >
     <div transition:slide={{ duration: 500 }}>
       <CenterContent class="max-h-[calc(100vh-3rem)]">
