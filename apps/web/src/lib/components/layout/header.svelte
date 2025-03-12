@@ -7,7 +7,7 @@
   import cn from "$lib/utils/cn";
 
   import Navigation from "../navigation/navigation.svelte";
-  import { linkColors } from "../navigation/utils/link.colors";
+  import { linkColor } from "../navigation/utils/link.color";
   import CenterContent from "../utils/center-content.svelte";
   import WidthLimiter from "../utils/width-limiter.svelte";
 </script>
@@ -25,7 +25,7 @@
           src="$lib/images/logo.min.svg"
           alt="LVMann logo"
           fetchpriority="high"
-          class="h-7 w-7"
+          class="h-7 w-7 drop-shadow-lg"
         />
         LVMann
       </a>
@@ -33,7 +33,7 @@
       <WidthLimiter to={LayoutSize.Medium}>
         <button
           class={cn(
-            linkColors,
+            linkColor,
             "col-start-3 w-12 cursor-pointer justify-center",
           )}
           aria-label={layoutStore.menu.open ? "Close menu" : "Open menu"}
