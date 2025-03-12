@@ -3,8 +3,11 @@ import { sequence } from "@sveltejs/kit/hooks";
 
 const preload: Handle = async ({ event, resolve }) => {
   return await resolve(event, {
-    preload: ({ type }) => {
-      return type === "js" || type === "css" || type === "font";
+    preload: ({ type, path }) => {
+      const preloadedType: boolean = ["font", "css", "js"].includes(type);
+      const preloadedPath: boolean =
+        type === "font" ? path.includes("latin") : true;
+      return preloadedType && preloadedPath;
     },
   });
 };

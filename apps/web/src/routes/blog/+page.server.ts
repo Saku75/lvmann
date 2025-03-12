@@ -9,7 +9,8 @@ export const load: PageServerLoad = async () => {
     posts,
     metadata: {
       title: ["Blog"],
-      description: "Lukas Vendel Mann's blog",
+      description:
+        "Read my latest thoughts on software development, distributed systems, and building high-performance applications. Explore tutorials, insights, and deep dives into the world of coding.",
       author: "Lukas Vendel Mann",
     },
   };
