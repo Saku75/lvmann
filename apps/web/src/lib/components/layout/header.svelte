@@ -12,7 +12,7 @@
   import WidthLimiter from "../utils/width-limiter.svelte";
 </script>
 
-<div class="sticky top-0 z-40 row-start-1 self-end">
+<div class="sticky top-0 z-40 row-start-1">
   <header
     class="border-y border-stone-400 bg-stone-100/50 backdrop-blur dark:border-stone-600 dark:bg-stone-900/50"
   >
@@ -22,8 +22,9 @@
         href="/"
       >
         <enhanced:img
-          src="$lib/images/logo.svg"
+          src="$lib/images/logo.min.svg"
           alt="LVMann logo"
+          fetchpriority="high"
           class="h-7 w-7"
         />
         LVMann
