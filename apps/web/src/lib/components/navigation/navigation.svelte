@@ -1,8 +1,12 @@
 <script lang="ts">
+  import ExternalLink from "@lucide/svelte/icons/external-link";
+
+  import { page } from "$app/state";
+
   import { navigationStore } from "$lib/stores/navigation.svelte";
   import cn from "$lib/utils/cn";
 
-  import { linkColors } from "./utils/link.colors";
+  import { linkColor, linkColorActive } from "./utils/link.color";
 
   interface Props {
     type?: "list" | "bar";
@@ -23,14 +27,20 @@
         "flex-col": type === "list",
       })}
     >
-      {#each items as { text, href, Icon }}
+      {#each items as { text, href, target, Icon }}
         <li class="contents">
           <a
             {href}
-            class={cn(linkColors, "px-4 font-heading", {
-              "justify-center gap-1 py-1 text-xl": type === "list",
-              "gap-0.5 text-lg": type === "bar",
-            })}
+            {target}
+            class={cn(
+              linkColor,
+              page.url.pathname === href && linkColorActive,
+              "px-4 font-heading",
+              {
+                "justify-center gap-1 py-1 text-xl": type === "list",
+                "gap-0.5 text-lg": type === "bar",
+              },
+            )}
           >
             {#if Icon}
               <Icon
@@ -41,6 +51,14 @@
               />
             {/if}
             {text}
+            {#if href.startsWith("http://") || href.startsWith("https://")}
+              <ExternalLink
+                class={cn("h-3.5 w-3.5", {
+                  "h-4.5 w-4.5": type === "list",
+                  "h-3.5 w-3.5": type === "bar",
+                })}
+              />
+            {/if}
           </a>
         </li>
       {/each}

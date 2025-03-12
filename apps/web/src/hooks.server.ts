@@ -1,6 +1,16 @@
 import type { Handle } from "@sveltejs/kit";
 import { sequence } from "@sveltejs/kit/hooks";
 
+const headers: Handle = async ({ event, resolve }) => {
+  event.setHeaders({
+    "X-Frame-Options": "SAMEORIGIN",
+    "Referrer-Policy": "strict-origin-when-cross-origin",
+    "Permissions-Policy":
+      "accelerometer=(), attribution-reporting=(), autoplay=(), bluetooth=(), browsing-topics=(), camera=(), compute-pressure=(), cross-origin-isolated=(), display-capture=(), encrypted-media=(), fullscreen=(), gamepad=(), geolocation=(), gyroscope=(), hid=(), identity-credentials-get=(), idle-detection=(), local-fonts=(), magnetometer=(), microphone=(), midi=(), otp-credentials=(), payment=(), picture-in-picture=(), publickey-credentials-create=(), publickey-credentials-get=(), screen-wake-lock=(), serial=(), storage-access=(), usb=(), web-share=(), window-management=(), xr-spatial-tracking=()",
+  });
+  return await resolve(event);
+};
+
 const preload: Handle = async ({ event, resolve }) => {
   return await resolve(event, {
     preload: ({ type, path }) => {
@@ -12,4 +22,4 @@ const preload: Handle = async ({ event, resolve }) => {
   });
 };
 
-export const handle = sequence(preload);
+export const handle = sequence(headers, preload);

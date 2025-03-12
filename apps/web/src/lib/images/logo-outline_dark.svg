@@ -3,7 +3,7 @@
   <defs>
     <style>
       .cls-1 {
-        fill: #fff;
+        fill: oklch(0.97 0.001 106.424);
       }
     </style>
   </defs>

@@ -1,10 +1,12 @@
 import type { Icon } from "@lucide/svelte";
 import House from "@lucide/svelte/icons/house";
 import Library from "@lucide/svelte/icons/library";
+import type { HTMLAttributeAnchorTarget } from "svelte/elements";
 
 type NavigationItem = {
   text: string;
   href: string;
+  target?: HTMLAttributeAnchorTarget;
   Icon?: typeof Icon;
 };
 
@@ -17,7 +19,7 @@ const navigationStore = $state<NavigationStore>([
     { text: "Home", href: "/", Icon: House },
     { text: "Blog", href: "/blog", Icon: Library },
   ],
-  [{ text: "Github", href: "https://github.com/Saku75" }],
+  [{ text: "Github", href: "https://github.com/Saku75", target: "_blank" }],
 ]);
 
 export { navigationStore };
