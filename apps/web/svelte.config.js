@@ -13,6 +13,11 @@ const config = {
       $routes: "./src/routes",
       $posts: "./src/posts",
     },
+    csp: {
+      directives: {
+        "script-src": ["self"],
+      },
+    },
   },
 };
 
