@@ -16,9 +16,8 @@
 </script>
 
 <nav
-  class={cn({
-    "flex flex-col gap-2": type === "list",
-    contents: type === "bar",
+  class={cn("flex justify-between gap-2", {
+    "flex-col": type === "list",
   })}
 >
   {#each navigationStore as items, i}
