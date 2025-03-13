@@ -1,6 +1,23 @@
 import type { Handle } from "@sveltejs/kit";
 import { sequence } from "@sveltejs/kit/hooks";
 
+import { LayoutTheme } from "$lib/enums/layout.theme";
+
+const theme: Handle = async ({ event, resolve }) => {
+  const themePreferenceCookie =
+    (event.cookies.get("theme-preference") as LayoutTheme) ||
+    LayoutTheme.System;
+  return await resolve(event, {
+    transformPageChunk: ({ html }) =>
+      html.replace(
+        "%theme-preference%",
+        themePreferenceCookie && themePreferenceCookie != LayoutTheme.System
+          ? `data-theme="${themePreferenceCookie}"`
+          : "",
+      ),
+  });
+};
+
 const headers: Handle = async ({ event, resolve }) => {
   event.setHeaders({
     "X-Frame-Options": "SAMEORIGIN",
@@ -22,4 +39,4 @@ const preload: Handle = async ({ event, resolve }) => {
   });
 };
 
-export const handle = sequence(headers, preload);
+export const handle = sequence(theme, headers, preload);
