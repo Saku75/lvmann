@@ -1,55 +1,38 @@
 <script lang="ts">
-  import Menu from "@lucide/svelte/icons/menu";
-  import X from "@lucide/svelte/icons/x";
-
   import { LayoutSize } from "$lib/enums/layout.size";
-  import { layoutStore } from "$lib/stores/layout.svelte";
-  import cn from "$lib/utils/cn";
 
+  import MenuButton from "../navigation/navigation-button.svelte";
   import Navigation from "../navigation/navigation.svelte";
-  import { linkColor } from "../navigation/utils/link.color";
+  import ThemeButton from "../theme-switcher/theme-button.svelte";
   import CenterContent from "../utils/center-content.svelte";
   import WidthLimiter from "../utils/width-limiter.svelte";
 </script>
 
-<div class="sticky top-0 z-40 row-start-1">
-  <header
-    class="border-y border-stone-400 bg-stone-100/50 backdrop-blur dark:border-stone-600 dark:bg-stone-900/50"
-  >
-    <CenterContent class="grid h-12 grid-cols-layout">
-      <a
-        class="flex h-full items-center gap-2 px-4 font-heading text-2xl font-medium"
-        href="/"
-      >
-        <enhanced:img
-          src="$lib/images/logo.min.svg"
-          alt="LVMann logo"
-          fetchpriority="high"
-          class="h-7 w-7 drop-shadow-lg"
-        />
-        LVMann
-      </a>
+<header
+  class="sticky top-0 z-40 row-start-1 border-y border-stone-400 bg-stone-100/50 backdrop-blur dark:border-stone-600 dark:bg-stone-900/50"
+>
+  <CenterContent class="grid h-12 grid-cols-layout">
+    <a
+      class="flex h-full items-center gap-2 px-4 font-heading text-2xl font-medium"
+      href="/"
+    >
+      <enhanced:img
+        src="$lib/images/logo.min.svg"
+        alt="LVMann logo"
+        fetchpriority="high"
+        class="h-7 w-7 drop-shadow-lg"
+      />
+      LVMann
+    </a>
 
-      <WidthLimiter to={LayoutSize.Medium}>
-        <button
-          class={cn(
-            linkColor,
-            "col-start-3 w-12 cursor-pointer justify-center",
-          )}
-          aria-label={layoutStore.menu.open ? "Close menu" : "Open menu"}
-          on:click={() => (layoutStore.menu.open = !layoutStore.menu.open)}
-        >
-          {#if layoutStore.menu.open}
-            <X class="h-8 w-8" />
-          {:else}
-            <Menu class="h-7 w-7" />
-          {/if}
-        </button>
-      </WidthLimiter>
+    <WidthLimiter to={LayoutSize.Medium}>
+      <MenuButton class="justify-self-end" />
+    </WidthLimiter>
 
-      <WidthLimiter from={LayoutSize.Medium}>
-        <Navigation type="bar" />
-      </WidthLimiter>
-    </CenterContent>
-  </header>
-</div>
+    <WidthLimiter from={LayoutSize.Medium}>
+      <Navigation type="bar" />
+    </WidthLimiter>
+
+    <ThemeButton />
+  </CenterContent>
+</header>

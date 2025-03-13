@@ -10,6 +10,18 @@
 }
 
 @layer base {
+  html {
+    &[data-theme="light"] {
+      scrollbar-color: oklch(0.709 0.01 56.259) oklch(0.923 0.003 48.717);
+      color: light;
+    }
+
+    &[data-theme="dark"] {
+      scrollbar-color: oklch(0.444 0.011 73.639) oklch(0.268 0.007 34.298);
+      color: dark;
+    }
+  }
+
   body {
     @apply bg-stone-100 text-stone-950 dark:bg-stone-900 dark:text-stone-50;
 
