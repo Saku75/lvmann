@@ -18,7 +18,10 @@
         layoutStore.theme === LayoutTheme.System && linkColorActive,
         "cursor-pointer justify-center gap-1 px-4 py-1 font-heading text-xl capitalize",
       )}
-      onclick={() => (layoutStore.theme = LayoutTheme.System)}
+      onclick={() => (
+        (layoutStore.theme = LayoutTheme.System),
+        (layoutStore.menu.open = false)
+      )}
     >
       <SunMoon class="h-5.5 w-5.5" />
       {LayoutTheme.System}
@@ -31,7 +34,9 @@
         layoutStore.theme === LayoutTheme.Light && linkColorActive,
         "cursor-pointer justify-center gap-1 px-4 py-1 font-heading text-xl capitalize",
       )}
-      onclick={() => (layoutStore.theme = LayoutTheme.Light)}
+      onclick={() => (
+        (layoutStore.theme = LayoutTheme.Light), (layoutStore.menu.open = false)
+      )}
     >
       <Sun class="h-5.5 w-5.5" />
       {LayoutTheme.Light}
@@ -44,7 +49,9 @@
         layoutStore.theme === LayoutTheme.Dark && linkColorActive,
         "cursor-pointer justify-center gap-1 px-4 py-1 font-heading text-xl capitalize",
       )}
-      onclick={() => (layoutStore.theme = LayoutTheme.Dark)}
+      onclick={() => (
+        (layoutStore.theme = LayoutTheme.Dark), (layoutStore.menu.open = false)
+      )}
     >
       <Moon class="h-5.5 w-5.5" />
       {LayoutTheme.Dark}
