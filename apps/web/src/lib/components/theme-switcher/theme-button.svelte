@@ -37,7 +37,6 @@
     window
       .matchMedia("(prefers-color-scheme: dark)")
       .addEventListener("change", (event) => {
-        console.log(layoutStore.theme);
         if (layoutStore.theme === LayoutTheme.System)
           document.documentElement.dataset.theme = event.matches
             ? LayoutTheme.Dark
