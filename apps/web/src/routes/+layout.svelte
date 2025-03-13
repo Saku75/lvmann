@@ -11,12 +11,14 @@
   import Metadata from "$lib/components/utils/metadata.svelte";
   import { LayoutMenuContent } from "$lib/enums/layout.menu-content";
   import { layoutStore } from "$lib/stores/layout.svelte";
+  import { versionStore } from "$lib/stores/version.svelte";
 
   import "../app.css";
   import type { LayoutProps } from "./$types";
 
   let { data, children }: LayoutProps = $props();
 
+  versionStore.version = data.appVersion;
   layoutStore.theme = data.themePreference;
 </script>
 
