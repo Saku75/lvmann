@@ -12,6 +12,6 @@
     "skipLibCheck": true,
     "moduleResolution": "bundler",
 
-    "types": ["@cloudflare/workers-types", "./src/worker-env.d.ts"]
+    "types": ["./src/worker-env.d.ts"]
   }
 }
