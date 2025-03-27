@@ -1,137 +1,5 @@
 <script lang="ts">
-  import type { Icon } from "@lucide/svelte";
-
-  import Akamai from "$lib/components/icons/akamai.svelte";
-  import CloudflarePages from "$lib/components/icons/cloudflare-pages.svelte";
-  import CloudflareWorkers from "$lib/components/icons/cloudflare-workers.svelte";
-  import Cloudflare from "$lib/components/icons/cloudflare.svelte";
-  import Debian from "$lib/components/icons/debian.svelte";
-  import Docker from "$lib/components/icons/docker.svelte";
-  import Dotnet from "$lib/components/icons/dotnet.svelte";
-  import GithubActions from "$lib/components/icons/github-actions.svelte";
-  import Github from "$lib/components/icons/github.svelte";
-  import Javascript from "$lib/components/icons/javascript.svelte";
-  import Node from "$lib/components/icons/node.svelte";
-  import Rust from "$lib/components/icons/rust.svelte";
-  import Svelte from "$lib/components/icons/svelte.svelte";
-  import Tailwindcss from "$lib/components/icons/tailwindcss.svelte";
-  import Tauri from "$lib/components/icons/tauri.svelte";
-  import Tyepscript from "$lib/components/icons/tyepscript.svelte";
-  import Vue from "$lib/components/icons/vue.svelte";
   import CenterContent from "$lib/components/utils/center-content.svelte";
-  import cn from "$lib/utils/cn";
-
-  const whatIBuildWith: {
-    text: string;
-    size: "small" | "big";
-    color: string;
-    Icon?: typeof Icon;
-  }[] = [
-    {
-      text: "Github",
-      size: "big",
-      color: cn(
-        "hocus:border-stone-900 hocus:text-stone-900 dark:hocus:border-stone-100 dark:hocus:text-stone-100",
-      ),
-      Icon: Github,
-    },
-    {
-      text: "Github Actions",
-      size: "small",
-      color: cn("hocus:border-blue-500 hocus:text-blue-500"),
-      Icon: GithubActions,
-    },
-    {
-      text: "Cloudflare",
-      size: "big",
-      color: cn("hocus:border-orange-500 hocus:text-orange-500"),
-      Icon: Cloudflare,
-    },
-    {
-      text: "Cloudflare Pages",
-      size: "small",
-      color: cn("hocus:border-orange-500 hocus:text-orange-500"),
-      Icon: CloudflarePages,
-    },
-    {
-      text: "Cloudflare Workers",
-      size: "small",
-      color: cn("hocus:border-orange-500 hocus:text-orange-500"),
-      Icon: CloudflareWorkers,
-    },
-    {
-      text: "TypeScript",
-      size: "big",
-      color: cn("hocus:border-blue-500 hocus:text-blue-500"),
-      Icon: Tyepscript,
-    },
-    {
-      text: "JavaScript",
-      size: "small",
-      color: cn("hocus:border-yellow-500 hocus:text-yellow-500"),
-      Icon: Javascript,
-    },
-    {
-      text: "Rust",
-      size: "big",
-      color: cn("hocus:border-orange-600 hocus:text-orange-600"),
-      Icon: Rust,
-    },
-    {
-      text: "Dotnet",
-      size: "small",
-      color: cn("hocus:border-purple-500 hocus:text-purple-500"),
-      Icon: Dotnet,
-    },
-    {
-      text: "Docker",
-      size: "small",
-      color: cn("hocus:border-blue-500 hocus:text-blue-500"),
-      Icon: Docker,
-    },
-    {
-      text: "Svelte",
-      size: "big",
-      color: cn("hocus:border-orange-600 hocus:text-orange-600"),
-      Icon: Svelte,
-    },
-    {
-      text: "Vue.js",
-      size: "small",
-      color: cn("hocus:border-green-400 hocus:text-green-400"),
-      Icon: Vue,
-    },
-    {
-      text: "Tailwind CSS",
-      size: "small",
-      color: cn("hocus:border-sky-500 hocus:text-sky-500"),
-      Icon: Tailwindcss,
-    },
-    {
-      text: "Node.js",
-      size: "small",
-      color: cn("hocus:border-green-500 hocus:text-green-500"),
-      Icon: Node,
-    },
-    {
-      text: "Tauri",
-      size: "small",
-      color: cn("hocus:border-yellow-500 hocus:text-yellow-500"),
-      Icon: Tauri,
-    },
-    {
-      text: "Akamai",
-      size: "small",
-      color: cn("hocus:border-sky-500 hocus:text-sky-500"),
-      Icon: Akamai,
-    },
-    {
-      text: "Akamai",
-      size: "small",
-      color: cn("hocus:border-pink-700 hocus:text-pink-700"),
-      Icon: Debian,
-    },
-  ];
 </script>
 
 <main
@@ -157,8 +25,8 @@
             class="rounded border border-stone-400 bg-stone-100/50 px-2 py-1 backdrop-blur dark:border-stone-600 dark:bg-stone-900/50"
           >
             I'm a software developer passionate about building user-focused,
-            high-performance apps and distributed systems. Explore my work,
-            check out my blog, or get in touch!
+            high-performance apps and distributed systems. Explore my work on
+            Github, or get in touch!
           </p>
         </div>
         <div
@@ -186,7 +54,7 @@
       </div>
     </CenterContent>
   </section>
-  <section>
+  <!-- <section>
     <CenterContent class="flex flex-col gap-2 px-2 py-8">
       <h2 class="text-2xl sm:text-3xl md:text-4xl">What I Build With</h2>
       <div
@@ -219,6 +87,5 @@
         {/each}
       </div>
     </CenterContent>
-  </section>
-  <dir class="h-[30rem]"></dir>
+  </section> -->
 </main>
