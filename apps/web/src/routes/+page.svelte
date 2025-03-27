@@ -1,4 +1,9 @@
 <script lang="ts">
+  import ExternalLink from "@lucide/svelte/icons/external-link";
+  import Send from "@lucide/svelte/icons/send";
+
+  import Github from "$lib/components/icons/github.svelte";
+  import Button from "$lib/components/utils/button.svelte";
   import CenterContent from "$lib/components/utils/center-content.svelte";
 </script>
 
@@ -21,13 +26,24 @@
           >
             Software Developer
           </p>
-          <p
+          <div
             class="rounded border border-stone-400 bg-stone-100/50 px-2 py-1 backdrop-blur dark:border-stone-600 dark:bg-stone-900/50"
           >
-            I'm a software developer passionate about building user-focused,
-            high-performance apps and distributed systems. Explore my work on
-            Github, or get in touch!
-          </p>
+            <p class="mb-2">
+              I'm a software developer passionate about building user-focused,
+              high-performance apps and distributed systems. Explore my work on
+              Github, or get in touch!
+            </p>
+            <div class="flex justify-center gap-1">
+              <Button purpose="link" href="https://github.com/Saku75">
+                <Github class="h-4.5 w-4.5" /> Github
+                <ExternalLink class="h-3.5 w-3.5" />
+              </Button>
+              <Button purpose="link" href="/contact">
+                <Send class="h-4.5 w-4.5" /> Get in touch
+              </Button>
+            </div>
+          </div>
         </div>
         <div
           class="grid max-h-[40rem] min-h-[30rem] max-w-[40rem] items-center overflow-clip object-cover object-center drop-shadow-lg *:col-start-1 *:row-start-1"
