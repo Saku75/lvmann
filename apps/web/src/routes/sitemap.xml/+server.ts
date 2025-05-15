@@ -4,11 +4,11 @@ import { getPosts } from "$lib/posts";
 
 import type { RequestHandler } from "./$types";
 
-export const GET: RequestHandler = async ({ url }) => {
+export const GET: RequestHandler = async ({ url, platform }) => {
   const postSlugs = getPosts().map((post) => post.slug);
 
   return await response({
-    origin: url.origin,
+    origin: url.origin.replace(url.hostname, platform?.env.HOSTNAME_CANONICAL!),
     paramValues: {
       "/blog/[...slug]": postSlugs,
     },
