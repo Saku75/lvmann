@@ -20,12 +20,24 @@
 
   versionStore.version = data.appVersion;
   layoutStore.theme = data.themePreference;
+
+  const canonicalUrl = $derived.by(() =>
+    page.url.hostname !== data.hostnameCanonical
+      ? page.url.toString().replace(page.url.hostname, data.hostnameCanonical!)
+      : null,
+  );
 </script>
 
 <svelte:window
   bind:innerHeight={layoutStore.size.height}
   bind:innerWidth={layoutStore.size.width}
 />
+
+<svelte:head>
+  {#if canonicalUrl}
+    <link rel="canonical" href={canonicalUrl} />
+  {/if}
+</svelte:head>
 
 <Metadata data={page.data.metadata} />
 
