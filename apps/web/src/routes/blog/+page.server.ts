@@ -8,9 +8,9 @@ export const load: PageServerLoad = async () => {
   return {
     posts,
     metadata: {
-      title: ["Blog"],
+      title: ["Personal Blog"],
       description:
-        "Read my latest thoughts on software development, distributed systems, and building high-performance applications. Explore tutorials, insights, and deep dives into the world of coding.",
+        "Read my latest thoughts on software development, distributed systems, and building high-performance applications.",
       author: "Lukas Vendel Mann",
     },
   };

@@ -16,8 +16,15 @@
     "enabled": true
   },
 
+  "vars": {
+    "HOSTNAME_CANONICAL": "localhost"
+  },
+
   "env": {
     "dev": {
+      "vars": {
+        "HOSTNAME_CANONICAL": "dev.lvmann.io"
+      },
       "routes": [
         {
           "zone_id": "83d66c57df708ad9f6bcff869f3756f5",
@@ -32,6 +39,9 @@
       ]
     },
     "prod": {
+      "vars": {
+        "HOSTNAME_CANONICAL": "lvmann.io"
+      },
       "routes": [
         {
           "zone_id": "83d66c57df708ad9f6bcff869f3756f5",
